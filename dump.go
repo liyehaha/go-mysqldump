@@ -478,6 +478,16 @@ func (table *table) RowBuffer() *bytes.Buffer {
 			} else {
 				fmt.Fprintf(&b, "_binary '%s'", sanitize(string(*s)))
 			}
+		case *sql.NullTime:
+			if s.Valid {
+				if s.Time.Format(time.TimeOnly) == "00:00:00" {
+					fmt.Fprintf(&b, "'%s'", s.Time.Format(time.DateOnly))
+				} else {
+					fmt.Fprintf(&b, "'%s'", s.Time.Format(time.DateTime))
+				}
+			} else {
+				b.WriteString(nullType)
+			}
 		default:
 			fmt.Fprintf(&b, "'%s'", value)
 		}
