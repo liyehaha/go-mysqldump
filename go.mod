@@ -4,7 +4,6 @@ go 1.20
 
 require (
 	github.com/DATA-DOG/go-sqlmock v1.5.0
-	github.com/jamf/go-mysqldump v0.7.1
 	github.com/stretchr/testify v1.8.4
 )
 

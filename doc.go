@@ -11,7 +11,7 @@ This example uses the mysql driver (https://github.com/go-sql-driver/mysql) to c
         "database/sql"
         "fmt"
 
-        "github.com/jamf/go-mysqldump"
+        "github.com/liyehaha/go-mysqldump"
         "github.com/go-sql-driver/mysql"
     )
 
